@@ -6,6 +6,7 @@ from models.post import Post
 
 Database.initialize()
 
-post = Post.from_mongo('60bb58501eef4b0d91bf2808158f808d')
+posts = Post.from_blog('123')
 
-__import__("pprint").pprint(post)
+for post in posts:
+        print(post)
