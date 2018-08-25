@@ -3,7 +3,8 @@ import datetime
 from database import Database
 
 class Post(object):
-    def __init__(self, blog_id, title, content, author, date=datetime.datetime.utcnow(), id_=None):
+    def __init__(self, blog_id, title, content, author,
+                date=datetime.datetime.utcnow(), id_=None):
         self.blog_id = blog_id
         self.title = title
         self.content = content
@@ -41,4 +42,5 @@ class Post(object):
 
     @staticmethod
     def from_blog(id_):
-        return [post for post in Database.find('posts', query={'blog_id': id_})]
+        return [post for post in 
+                    Database.find('posts', query={'blog_id': id_})]
