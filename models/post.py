@@ -22,3 +22,17 @@ class Post:
                 'title': self.title,
                 'created_date': self.created_date
                 }
+
+    @staticmethod
+    def from_mongo(id_):
+        """Given ID, return content.
+
+        :param id: ID of the post
+        :returns data: Content from the post ID
+
+        """
+        return Database.find_one(collection='posts', query={'id': id_})
+
+    @staticmethod
+    def from_blog(id_):
+        return [post for post in Database.find('posts', query={'blog_id': id_})]
