@@ -4,11 +4,9 @@
 from database import Database
 from models.post import Post
 
-Database.initalize()
+post = Post(blog_id="123",
+        title="Another great post",
+        content="This is some sample content",
+        author="Santosh")
 
-post = Post()
-post2 = Post()
-post2.content = "Some different content"
-
-print(post.content)
-print(post2.content)
+post.save_to_mongo()
