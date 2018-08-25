@@ -4,9 +4,8 @@
 from database import Database
 from models.post import Post
 
-post = Post(blog_id="123",
-        title="Another great post",
-        content="This is some sample content",
-        author="Santosh")
+Database.initialize()
 
-post.save_to_mongo()
+post = Post.from_mongo('60bb58501eef4b0d91bf2808158f808d')
+
+__import__("pprint").pprint(post)

@@ -16,7 +16,7 @@ class Post(object):
         """Insert JSON data to posts collections of database."""
 
         Database.insert(collection='posts',
-                self.json())
+                data=self.json())
 
     def json(self):
         """Jsonify the Post data."""
