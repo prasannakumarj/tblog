@@ -51,4 +51,4 @@ class Post(object):
     @staticmethod
     def from_blog(id_):
         return [post for post in 
-                    Database.find('posts', query={'blog_id': id_})]
+                    Database.find(collection='posts', query={'blog_id': id_})]
